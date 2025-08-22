@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Water Polo Team</title>
+    <!--
+      This is the link to the Tailwind CSS library.
+      It gives us access to a wide range of utility classes to style our website.
+      This makes it easy to add colors, spacing, and responsive layouts without
+      writing a lot of custom CSS.
+    -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!--
+      This link imports the "Inter" font from Google Fonts, which gives the
+      website a modern and clean look.
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+      /* Apply the Inter font to all elements on the page */
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      /* Add smooth scrolling behavior for a better user experience when clicking navigation links */
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!--
+      NAVIGATION BAR
+      This is a sticky navigation bar that stays at the top of the page as you scroll.
+      It contains the team's logo/name and links to different sections of the website.
+    -->
+    <nav class="sticky top-0 z-50 bg-white shadow-md p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Team Logo / Name -->
+            <a href="#hero" class="text-2xl font-bold text-blue-700">
+                <span class="inline-block align-middle mr-2">🤽</span>
+                Water Polo Team
+            </a>
+
+            <!-- Navigation Links -->
+            <div class="space-x-4 hidden md:flex">
+                <a href="#about" class="text-gray-600 hover:text-blue-700 font-semibold transition-colors duration-200">About</a>
+                <a href="#roster" class="text-gray-600 hover:text-blue-700 font-semibold transition-colors duration-200">Roster</a>
+                <a href="#schedule" class="text-gray-600 hover:text-blue-700 font-semibold transition-colors duration-200">Schedule</a>
+                <a href="#news" class="text-gray-600 hover:text-blue-700 font-semibold transition-colors duration-200">News</a>
+            </div>
+
+            <!-- Hamburger menu for mobile view -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-600 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu (initially hidden) -->
+        <div id="mobile-menu" class="hidden md:hidden mt-2 p-4 bg-gray-50 rounded-b-lg shadow-inner">
+            <a href="#about" class="block py-2 text-gray-600 hover:text-blue-700 transition-colors duration-200">About</a>
+            <a href="#roster" class="block py-2 text-gray-600 hover:text-blue-700 transition-colors duration-200">Roster</a>
+            <a href="#schedule" class="block py-2 text-gray-600 hover:text-blue-700 transition-colors duration-200">Schedule</a>
+            <a href="#news" class="block py-2 text-gray-600 hover:text-blue-700 transition-colors duration-200">News</a>
+        </div>
+    </nav>
+
+    <!--
+      HERO SECTION
+      This is the main banner at the top of the page. It has a large title,
+      a short description, and a button to view the schedule.
+      The background image is a placeholder and should be replaced with a real photo.
+    -->
+    <header id="hero" class="relative bg-cover bg-center h-[60vh] md:h-[70vh] flex items-center justify-center text-white" style="background-image: url('https://placehold.co/1200x800/2a52be/ffffff?text=Team+Splash!');">
+        <!-- Overlay to make the text more readable -->
+        <div class="absolute inset-0 bg-blue-900 opacity-60"></div>
+        <div class="container mx-auto text-center p-4 z-10">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Welcome to Our Team!</h1>
+            <p class="text-lg md:text-xl max-w-2xl mx-auto mb-6">
+                Representing our school with pride, passion, and teamwork.
+            </p>
+            <a href="#schedule" class="inline-block bg-white text-blue-700 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-100 transition-transform transform hover:scale-105">
+                View Schedule
+            </a>
+        </div>
+    </header>
+
+    <!--
+      ABOUT SECTION
+      This section provides a brief description of the team's history and mission.
+    -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4 md:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">About the Team</h2>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                Our school's water polo team is a community dedicated to sportsmanship, discipline,
+                and excellence in the pool. We train year-round to compete at the highest level,
+                fostering a spirit of camaraderie that extends beyond the game. Join us in
+                supporting our athletes as they make a splash this season!
+            </p>
+        </div>
+    </section>
+
+    <!--
+      ROSTER SECTION
+      This section lists the team members using a grid layout. Each card represents a player.
+    -->
+    <section id="roster" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 md:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Meet the Roster</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Player Card 1 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition-transform hover:scale-105">
+                    <img src="https://placehold.co/200x200/55aaff/ffffff?text=Player+1" alt="Player 1" class="rounded-full mx-auto mb-4 w-32 h-32 object-cover">
+                    <h3 class="text-xl font-semibold text-blue-700">Alex Johnson</h3>
+                    <p class="text-sm text-gray-500">Center</p>
+                </div>
+                <!-- Player Card 2 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition-transform hover:scale-105">
+                    <img src="https://placehold.co/200x200/55aaff/ffffff?text=Player+2" alt="Player 2" class="rounded-full mx-auto mb-4 w-32 h-32 object-cover">
+                    <h3 class="text-xl font-semibold text-blue-700">Sarah Chen</h3>
+                    <p class="text-sm text-gray-500">Goalie</p>
+                </div>
+                <!-- Player Card 3 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition-transform hover:scale-105">
+                    <img src="https://placehold.co/200x200/55aaff/ffffff?text=Player+3" alt="Player 3" class="rounded-full mx-auto mb-4 w-32 h-32 object-cover">
+                    <h3 class="text-xl font-semibold text-blue-700">Mike Davis</h3>
+                    <p class="text-sm text-gray-500">Driver</p>
+                </div>
+                <!-- Player Card 4 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition-transform hover:scale-105">
+                    <img src="https://placehold.co/200x200/55aaff/ffffff?text=Player+4" alt="Player 4" class="rounded-full mx-auto mb-4 w-32 h-32 object-cover">
+                    <h3 class="text-xl font-semibold text-blue-700">Emily Rodriguez</h3>
+                    <p class="text-sm text-gray-500">Utility</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--
+      SCHEDULE SECTION
+      This section displays a list of upcoming games or events.
+    -->
+    <section id="schedule" class="py-16 bg-white">
+        <div class="container mx-auto px-4 md:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Upcoming Schedule</h2>
+            <div class="max-w-4xl mx-auto space-y-4">
+                <!-- Schedule Item 1 -->
+                <div class="bg-gray-100 rounded-lg p-6 flex flex-col md:flex-row items-center justify-between shadow-sm hover:shadow-md transition-shadow">
+                    <div class="mb-4 md:mb-0">
+                        <h3 class="text-xl font-semibold text-blue-700">Game vs. Northwood High</h3>
+                        <p class="text-gray-600">October 26, 2025 at 4:00 PM</p>
+                    </div>
+                    <div class="text-center md:text-right">
+                        <span class="inline-block bg-blue-200 text-blue-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Away</span>
+                    </div>
+                </div>
+                <!-- Schedule Item 2 -->
+                <div class="bg-gray-100 rounded-lg p-6 flex flex-col md:flex-row items-center justify-between shadow-sm hover:shadow-md transition-shadow">
+                    <div class="mb-4 md:mb-0">
+                        <h3 class="text-xl font-semibold text-blue-700">Tournament at City Pool</h3>
+                        <p class="text-gray-600">November 10-12, 2025</p>
+                    </div>
+                    <div class="text-center md:text-right">
+                        <span class="inline-block bg-green-200 text-green-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Home</span>
+                    </div>
+                </div>
+                <!-- Schedule Item 3 -->
+                <div class="bg-gray-100 rounded-lg p-6 flex flex-col md:flex-row items-center justify-between shadow-sm hover:shadow-md transition-shadow">
+                    <div class="mb-4 md:mb-0">
+                        <h3 class="text-xl font-semibold text-blue-700">Game vs. Oak Ridge</h3>
+                        <p class="text-gray-600">November 18, 2025 at 5:30 PM</p>
+                    </div>
+                    <div class="text-center md:text-right">
+                        <span class="inline-block bg-green-200 text-green-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Home</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--
+      NEWS/UPDATES SECTION
+      This section is for sharing the latest news or highlights from the team.
+    -->
+    <section id="news" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 md:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Latest News</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- News Article 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-transform hover:scale-105">
+                    <img src="https://placehold.co/600x400/55aaff/ffffff?text=Game+Recap" alt="Game Recap" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-blue-700 mb-2">Thrilling Victory in City Championship</h3>
+                        <p class="text-gray-600 mb-4">
+                            Our team clinched a nail-biting win in the city championship finals this past weekend...
+                        </p>
+                        <a href="#" class="text-blue-500 font-semibold hover:underline">Read more &rarr;</a>
+                    </div>
+                </div>
+                <!-- News Article 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-transform hover:scale-105">
+                    <img src="https://placehold.co/600x400/55aaff/ffffff?text=New+Player+Spotlight" alt="Player Spotlight" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-blue-700 mb-2">Spotlight on Our Rookie of the Year</h3>
+                        <p class="text-gray-600 mb-4">
+                            Get to know the newest member of our team and their incredible journey...
+                        </p>
+                        <a href="#" class="text-blue-500 font-semibold hover:underline">Read more &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--
+      FOOTER
+      The footer contains contact information, social media links, and copyright info.
+    -->
+    <footer class="bg-gray-800 text-gray-300 py-12">
+        <div class="container mx-auto px-4 md:px-8 text-center">
+            <div class="mb-6 space-x-4">
+                <a href="#" class="text-2xl hover:text-white transition-colors duration-200">
+                    <span class="inline-block align-middle">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.013 4.851.07 1.17.054 1.76.248 2.37.494.61.246 1.13.57 1.66.993.53.423.856.953 1.08 1.564.225.61.418 1.2.47 2.37.057 1.267.07 1.647.07 4.851s-.013 3.584-.07 4.851c-.054 1.17-.248 1.76-.494 2.37-.246.61-.57 1.13-.993 1.66-.423.53-.953.856-1.564 1.08-.61.225-1.2.418-2.37.47-.84.038-1.558.05-2.616.05-.038 0-.077 0-.115 0-1.267 0-1.647-.013-4.851-.07-1.17-.054-1.76-.248-2.37-.494-.61-.246-1.13-.57-1.66-.993-.53-.423-.856-.953-1.08-1.564-.225-.61-.418-1.2-.47-2.37-.057-1.267-.07-1.647-.07-4.851s.013-3.584.07-4.851c.054-1.17.248-1.76.494-2.37.246-.61.57-1.13.993-1.66.423-.53.953-.856 1.564-1.08.61-.225 1.2-.418 2.37-.47.84-.038 1.558-.05 2.616-.05zm0-2.163c-3.268 0-3.682.015-4.996.072-1.24.057-2.028.29-2.753.587-.723.298-1.33.72-1.933 1.323-.603.602-1.025 1.21-1.323 1.933-.297.725-.53 1.513-.587 2.753-.057 1.314-.072 1.728-.072 4.996s.015 3.682.072 4.996c.057 1.24.29 2.028.587 2.753.298.723.72 1.33 1.323 1.933.602.603 1.21 1.025 1.933 1.323.725.297 1.513.53 2.753.587 1.314.057 1.728.072 4.996.072s3.682-.015 4.996-.072c1.24-.057 2.028-.29 2.753-.587.723-.298 1.33-.72 1.933-1.323.603-.602 1.025-1.21 1.323-1.933.297-.725.53-1.513.587-2.753.057-1.314.072-1.728.072-4.996s-.015-3.682-.072-4.996c-.057-1.24-.29-2.028-.587-2.753-.298-.723-.72-1.33-1.323-1.933-.602-.603-1.21-1.025-1.933-1.323-.725-.297-1.513-.53-2.753-.587-1.314-.057-1.728-.072-4.996-.072zm0 8.932a3.932 3.932 0 100-7.864 3.932 3.932 0 000 7.864zm0-5.832a1.9 1.9 0 110 3.8 1.9 1.9 0 010-3.8z"></path></svg>
+                    </span>
+                </a>
+                <a href="#" class="text-2xl hover:text-white transition-colors duration-200">
+                    <span class="inline-block align-middle">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.256 5.86c-.77.34-1.59.57-2.45.67.89-.53 1.57-1.37 1.89-2.38-.83.49-1.75.85-2.73 1.04-.79-.84-1.92-1.37-3.17-1.37-2.38 0-4.32 1.94-4.32 4.32 0 .34.04.67.1.99-3.59-.18-6.78-1.9-8.91-4.59-.37.64-.58 1.38-.58 2.16 0 1.5.76 2.83 1.92 3.61-.71-.02-1.37-.22-1.95-.53.01.02.01.03.01.05 0 2.09 1.48 3.84 3.44 4.23-.36.1-.74.15-1.13.15-.28 0-.55-.03-.81-.08.55 1.71 2.14 2.96 4.02 2.99-1.47 1.15-3.32 1.84-5.32 1.84-.35 0-.7-.02-1.05-.06 1.91 1.22 4.18 1.93 6.6 1.93 7.92 0 12.26-6.56 12.26-12.26 0-.19-.01-.39-.01-.58.85-.62 1.58-1.4 2.16-2.29z"/></svg>
+                    </span>
+                </a>
+            </div>
+            <p>&copy; 2025 School Water Polo Team. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!--
+      JAVASCRIPT FOR INTERACTIVITY
+      This script handles two things:
+      1. Toggling the mobile menu when the hamburger icon is clicked.
+      2. Smoothly scrolling to the correct section when a navigation link is clicked.
+    -->
+    <script>
+        // Handle mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Handle smooth scrolling for all navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+
+                // Hide the mobile menu after a link is clicked
+                if (!mobileMenu.classList.contains('hidden')) {
+                  mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
