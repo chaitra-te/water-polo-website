@@ -28,8 +28,28 @@
         scroll-behavior: smooth;
       }
     </style>
+    <!--
+      CUSTOM TAILWIND CONFIGURATION
+      We've added a custom color palette here that matches the design of the
+      Richland RTC website (richlandrtc.org). This allows us to use custom color
+      names in our HTML like 'bg-rtc-dark-blue'.
+    -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'rtc-dark-blue': '#021d42',
+              'rtc-light-blue': '#104066',
+              'rtc-gray': '#f8f8f8',
+              'rtc-green': '#4caf50',
+            }
+          }
+        }
+      }
+    </script>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-rtc-gray text-gray-800">
 
     <!--
       NAVIGATION BAR
@@ -39,17 +59,18 @@
     <nav class="sticky top-0 z-50 bg-white shadow-md p-4">
         <div class="container mx-auto flex justify-between items-center">
             <!-- Team Logo / Name -->
-            <a href="#hero" class="text-2xl font-bold text-blue-700">
+            <a href="#hero" class="text-2xl font-bold text-rtc-dark-blue">
                 <span class="inline-block align-middle mr-2">🤽</span>
                 Water Polo Team
             </a>
 
             <!-- Navigation Links -->
             <div class="space-x-4 hidden md:flex">
-                <a href="#about" class="text-gray-600 hover:text-blue-700 font-semibold transition-colors duration-200">About</a>
-                <a href="#roster" class="text-gray-600 hover:text-blue-700 font-semibold transition-colors duration-200">Roster</a>
-                <a href="#schedule" class="text-gray-600 hover:text-blue-700 font-semibold transition-colors duration-200">Schedule</a>
-                <a href="#news" class="text-gray-600 hover:text-blue-700 font-semibold transition-colors duration-200">News</a>
+                <a href="#about" class="text-gray-600 hover:text-rtc-dark-blue font-semibold transition-colors duration-200">About</a>
+                <a href="#roster" class="text-gray-600 hover:text-rtc-dark-blue font-semibold transition-colors duration-200">Roster</a>
+                <a href="#schedule" class="text-gray-600 hover:text-rtc-dark-blue font-semibold transition-colors duration-200">Schedule</a>
+                <a href="#news" class="text-gray-600 hover:text-rtc-dark-blue font-semibold transition-colors duration-200">News</a>
+                <a href="#contact" class="text-gray-600 hover:text-rtc-dark-blue font-semibold transition-colors duration-200">Contact</a>
             </div>
 
             <!-- Hamburger menu for mobile view -->
@@ -60,10 +81,11 @@
 
         <!-- Mobile Menu (initially hidden) -->
         <div id="mobile-menu" class="hidden md:hidden mt-2 p-4 bg-gray-50 rounded-b-lg shadow-inner">
-            <a href="#about" class="block py-2 text-gray-600 hover:text-blue-700 transition-colors duration-200">About</a>
-            <a href="#roster" class="block py-2 text-gray-600 hover:text-blue-700 transition-colors duration-200">Roster</a>
-            <a href="#schedule" class="block py-2 text-gray-600 hover:text-blue-700 transition-colors duration-200">Schedule</a>
-            <a href="#news" class="block py-2 text-gray-600 hover:text-blue-700 transition-colors duration-200">News</a>
+            <a href="#about" class="block py-2 text-gray-600 hover:text-rtc-dark-blue transition-colors duration-200">About</a>
+            <a href="#roster" class="block py-2 text-gray-600 hover:text-rtc-dark-blue transition-colors duration-200">Roster</a>
+            <a href="#schedule" class="block py-2 text-gray-600 hover:text-rtc-dark-blue transition-colors duration-200">Schedule</a>
+            <a href="#news" class="block py-2 text-gray-600 hover:text-rtc-dark-blue transition-colors duration-200">News</a>
+            <a href="#contact" class="block py-2 text-gray-600 hover:text-rtc-dark-blue transition-colors duration-200">Contact</a>
         </div>
     </nav>
 
@@ -75,15 +97,20 @@
     -->
     <header id="hero" class="relative bg-cover bg-center h-[60vh] md:h-[70vh] flex items-center justify-center text-white" style="background-image: url('https://placehold.co/1200x800/2a52be/ffffff?text=Team+Splash!');">
         <!-- Overlay to make the text more readable -->
-        <div class="absolute inset-0 bg-blue-900 opacity-60"></div>
+        <div class="absolute inset-0 bg-rtc-dark-blue opacity-60"></div>
         <div class="container mx-auto text-center p-4 z-10">
             <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Welcome to Our Team!</h1>
             <p class="text-lg md:text-xl max-w-2xl mx-auto mb-6">
                 Representing our school with pride, passion, and teamwork.
             </p>
-            <a href="#schedule" class="inline-block bg-white text-blue-700 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-100 transition-transform transform hover:scale-105">
-                View Schedule
-            </a>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+              <a href="#schedule" class="inline-block bg-white text-rtc-light-blue font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-100 transition-transform transform hover:scale-105">
+                  View Schedule
+              </a>
+              <a href="#" class="inline-block bg-rtc-green text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-green-600 transition-transform transform hover:scale-105">
+                Donate Now
+              </a>
+            </div>
         </div>
     </header>
 
@@ -93,7 +120,7 @@
     -->
     <section id="about" class="py-16 bg-white">
         <div class="container mx-auto px-4 md:px-8">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">About the Team</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-rtc-dark-blue">About the Team</h2>
             <p class="text-center text-gray-600 max-w-3xl mx-auto leading-relaxed">
                 Our school's water polo team is a community dedicated to sportsmanship, discipline,
                 and excellence in the pool. We train year-round to compete at the highest level,
@@ -107,32 +134,32 @@
       ROSTER SECTION
       This section lists the team members using a grid layout. Each card represents a player.
     -->
-    <section id="roster" class="py-16 bg-gray-50">
+    <section id="roster" class="py-16 bg-rtc-gray">
         <div class="container mx-auto px-4 md:px-8">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Meet the Roster</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-rtc-dark-blue">Meet the Roster</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                 <!-- Player Card 1 -->
                 <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition-transform hover:scale-105">
                     <img src="https://placehold.co/200x200/55aaff/ffffff?text=Player+1" alt="Player 1" class="rounded-full mx-auto mb-4 w-32 h-32 object-cover">
-                    <h3 class="text-xl font-semibold text-blue-700">Alex Johnson</h3>
+                    <h3 class="text-xl font-semibold text-rtc-dark-blue">Alex Johnson</h3>
                     <p class="text-sm text-gray-500">Center</p>
                 </div>
                 <!-- Player Card 2 -->
                 <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition-transform hover:scale-105">
                     <img src="https://placehold.co/200x200/55aaff/ffffff?text=Player+2" alt="Player 2" class="rounded-full mx-auto mb-4 w-32 h-32 object-cover">
-                    <h3 class="text-xl font-semibold text-blue-700">Sarah Chen</h3>
+                    <h3 class="text-xl font-semibold text-rtc-dark-blue">Sarah Chen</h3>
                     <p class="text-sm text-gray-500">Goalie</p>
                 </div>
                 <!-- Player Card 3 -->
                 <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition-transform hover:scale-105">
                     <img src="https://placehold.co/200x200/55aaff/ffffff?text=Player+3" alt="Player 3" class="rounded-full mx-auto mb-4 w-32 h-32 object-cover">
-                    <h3 class="text-xl font-semibold text-blue-700">Mike Davis</h3>
+                    <h3 class="text-xl font-semibold text-rtc-dark-blue">Mike Davis</h3>
                     <p class="text-sm text-gray-500">Driver</p>
                 </div>
                 <!-- Player Card 4 -->
                 <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition-transform hover:scale-105">
                     <img src="https://placehold.co/200x200/55aaff/ffffff?text=Player+4" alt="Player 4" class="rounded-full mx-auto mb-4 w-32 h-32 object-cover">
-                    <h3 class="text-xl font-semibold text-blue-700">Emily Rodriguez</h3>
+                    <h3 class="text-xl font-semibold text-rtc-dark-blue">Emily Rodriguez</h3>
                     <p class="text-sm text-gray-500">Utility</p>
                 </div>
             </div>
@@ -145,36 +172,36 @@
     -->
     <section id="schedule" class="py-16 bg-white">
         <div class="container mx-auto px-4 md:px-8">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Upcoming Schedule</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-rtc-dark-blue">Upcoming Schedule</h2>
             <div class="max-w-4xl mx-auto space-y-4">
                 <!-- Schedule Item 1 -->
-                <div class="bg-gray-100 rounded-lg p-6 flex flex-col md:flex-row items-center justify-between shadow-sm hover:shadow-md transition-shadow">
+                <div class="bg-rtc-gray rounded-lg p-6 flex flex-col md:flex-row items-center justify-between shadow-sm hover:shadow-md transition-shadow">
                     <div class="mb-4 md:mb-0">
-                        <h3 class="text-xl font-semibold text-blue-700">Game vs. Northwood High</h3>
+                        <h3 class="text-xl font-semibold text-rtc-dark-blue">Game vs. Northwood High</h3>
                         <p class="text-gray-600">October 26, 2025 at 4:00 PM</p>
                     </div>
                     <div class="text-center md:text-right">
-                        <span class="inline-block bg-blue-200 text-blue-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Away</span>
+                        <span class="inline-block bg-rtc-light-blue text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Away</span>
                     </div>
                 </div>
                 <!-- Schedule Item 2 -->
-                <div class="bg-gray-100 rounded-lg p-6 flex flex-col md:flex-row items-center justify-between shadow-sm hover:shadow-md transition-shadow">
+                <div class="bg-rtc-gray rounded-lg p-6 flex flex-col md:flex-row items-center justify-between shadow-sm hover:shadow-md transition-shadow">
                     <div class="mb-4 md:mb-0">
-                        <h3 class="text-xl font-semibold text-blue-700">Tournament at City Pool</h3>
+                        <h3 class="text-xl font-semibold text-rtc-dark-blue">Tournament at City Pool</h3>
                         <p class="text-gray-600">November 10-12, 2025</p>
                     </div>
                     <div class="text-center md:text-right">
-                        <span class="inline-block bg-green-200 text-green-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Home</span>
+                        <span class="inline-block bg-rtc-green text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Home</span>
                     </div>
                 </div>
                 <!-- Schedule Item 3 -->
-                <div class="bg-gray-100 rounded-lg p-6 flex flex-col md:flex-row items-center justify-between shadow-sm hover:shadow-md transition-shadow">
+                <div class="bg-rtc-gray rounded-lg p-6 flex flex-col md:flex-row items-center justify-between shadow-sm hover:shadow-md transition-shadow">
                     <div class="mb-4 md:mb-0">
-                        <h3 class="text-xl font-semibold text-blue-700">Game vs. Oak Ridge</h3>
+                        <h3 class="text-xl font-semibold text-rtc-dark-blue">Game vs. Oak Ridge</h3>
                         <p class="text-gray-600">November 18, 2025 at 5:30 PM</p>
                     </div>
                     <div class="text-center md:text-right">
-                        <span class="inline-block bg-green-200 text-green-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Home</span>
+                        <span class="inline-block bg-rtc-green text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Home</span>
                     </div>
                 </div>
             </div>
@@ -185,32 +212,66 @@
       NEWS/UPDATES SECTION
       This section is for sharing the latest news or highlights from the team.
     -->
-    <section id="news" class="py-16 bg-gray-50">
+    <section id="news" class="py-16 bg-white">
         <div class="container mx-auto px-4 md:px-8">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Latest News</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-rtc-dark-blue">Latest News</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                 <!-- News Article 1 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-transform hover:scale-105">
+                <div class="bg-rtc-gray rounded-xl shadow-lg overflow-hidden transform transition-transform hover:scale-105">
                     <img src="https://placehold.co/600x400/55aaff/ffffff?text=Game+Recap" alt="Game Recap" class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h3 class="text-2xl font-semibold text-blue-700 mb-2">Thrilling Victory in City Championship</h3>
+                        <h3 class="text-2xl font-semibold text-rtc-dark-blue mb-2">Thrilling Victory in City Championship</h3>
                         <p class="text-gray-600 mb-4">
                             Our team clinched a nail-biting win in the city championship finals this past weekend...
                         </p>
-                        <a href="#" class="text-blue-500 font-semibold hover:underline">Read more &rarr;</a>
+                        <a href="#" class="text-rtc-light-blue font-semibold hover:underline">Read more &rarr;</a>
                     </div>
                 </div>
                 <!-- News Article 2 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-transform hover:scale-105">
+                <div class="bg-rtc-gray rounded-xl shadow-lg overflow-hidden transform transition-transform hover:scale-105">
                     <img src="https://placehold.co/600x400/55aaff/ffffff?text=New+Player+Spotlight" alt="Player Spotlight" class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h3 class="text-2xl font-semibold text-blue-700 mb-2">Spotlight on Our Rookie of the Year</h3>
+                        <h3 class="text-2xl font-semibold text-rtc-dark-blue mb-2">Spotlight on Our Rookie of the Year</h3>
                         <p class="text-gray-600 mb-4">
                             Get to know the newest member of our team and their incredible journey...
                         </p>
-                        <a href="#" class="text-blue-500 font-semibold hover:underline">Read more &rarr;</a>
+                        <a href="#" class="text-rtc-light-blue font-semibold hover:underline">Read more &rarr;</a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!--
+      CONTACT SECTION
+      This section contains a contact form for visitors to get in touch.
+    -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4 md:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-rtc-dark-blue">Contact Us</h2>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-10 leading-relaxed">
+                Have a question or want to get involved? Send us a message and we'll get back to you soon!
+            </p>
+            <div class="max-w-xl mx-auto bg-rtc-gray p-8 rounded-xl shadow-lg">
+                <form id="contact-form">
+                    <div class="mb-4">
+                        <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                        <input type="text" id="name" name="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-rtc-light-blue" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                        <input type="email" id="email" name="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-rtc-light-blue" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
+                        <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-rtc-light-blue" required></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-rtc-light-blue text-white font-bold py-3 px-4 rounded-lg shadow-md hover:bg-rtc-dark-blue transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-rtc-light-blue">
+                        Send Message
+                    </button>
+                    <!-- Message box for form status -->
+                    <div id="form-status-message" class="mt-4 text-center hidden"></div>
+                </form>
             </div>
         </div>
     </section>
@@ -219,7 +280,7 @@
       FOOTER
       The footer contains contact information, social media links, and copyright info.
     -->
-    <footer class="bg-gray-800 text-gray-300 py-12">
+    <footer class="bg-rtc-dark-blue text-gray-300 py-12">
         <div class="container mx-auto px-4 md:px-8 text-center">
             <div class="mb-6 space-x-4">
                 <a href="#" class="text-2xl hover:text-white transition-colors duration-200">
@@ -239,9 +300,10 @@
 
     <!--
       JAVASCRIPT FOR INTERACTIVITY
-      This script handles two things:
+      This script handles three things:
       1. Toggling the mobile menu when the hamburger icon is clicked.
       2. Smoothly scrolling to the correct section when a navigation link is clicked.
+      3. Handling the contact form submission.
     -->
     <script>
         // Handle mobile menu toggle
@@ -271,6 +333,31 @@
                   mobileMenu.classList.add('hidden');
                 }
             });
+        });
+
+        // Handle form submission
+        const contactForm = document.getElementById('contact-form');
+        const formStatusMessage = document.getElementById('form-status-message');
+
+        contactForm.addEventListener('submit', function(e) {
+            // Prevent the default form submission behavior (which would reload the page)
+            e.preventDefault();
+
+            // Display a success message
+            formStatusMessage.classList.remove('hidden');
+            formStatusMessage.classList.remove('text-red-600');
+            formStatusMessage.classList.add('text-green-600');
+            formStatusMessage.innerText = 'Thank you for your message! We will get back to you soon.';
+
+            // You would replace this with actual logic to send the email,
+            // for example, by using a service like Formspree or a backend server.
+            // For now, we'll just log the form data and clear the inputs.
+            const formData = new FormData(contactForm);
+            for (let [key, value] of formData.entries()) {
+                console.log(`${key}: ${value}`);
+            }
+
+            contactForm.reset();
         });
     </script>
 
